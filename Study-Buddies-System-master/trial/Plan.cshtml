@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy</title>
+    <link href="~/Content/themes/Plan.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="~/Content/themes/hire.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="app-header">
+        <div class="app-logo-name">
+            <a href="~/Default.cshtml">
+                <img src="~/Images/SBApp.png" alt="App Logo" class="app-logo">
+                <h1 class="app-name">Study Buddies</h1>
+            </a>
+        </div>
+        <div class="header-icons">
+            <a href="Hire.cshtml" class="hire-tutor">Hire a Tutor</a>
+            <button class="go-premium-button">Go Premium</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="pricing-plans" style="margin-top: 70px;">
+            <div class="pricing-plan">
+                <h2>Free Plan</h2>
+                <p>Get access to basic features</p>
+                <ul>
+                    <li>Limited access</li>
+                    <li>No premium support</li>
+                    <li>Ads included</li>
+                </ul>
+                <button class="buy-button" onclick="redirectToFreePlan()">Get Started</button>
+            </div>
+            <div class="pricing-plan premium">
+                <h2>Premium Plan</h2>
+                <p>Unlock all features and premium support</p>
+                <ul>
+                    <li>Unlimited access</li>
+                    <li>Premium support</li>
+                    <li>No ads</li>
+                </ul>
+                <button class="buy-button premium" onclick="showPremiumModal()">Upgrade Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="premiumModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePremiumModal()">&times;</span>
+            <h2>Confirm Purchase</h2>
+            <p>Are you sure you want to purchase the Premium Plan?</p>
+            <button class="confirm-button" onclick="confirmPremiumPurchase()">Yes</button>
+            <button class="cancel-button" onclick="closePremiumModal()">No</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+
+    function showPremiumModal() {
+        document.getElementById('premiumModal').style.display = 'flex';
+    }
+
+    function closePremiumModal() {
+        document.getElementById('premiumModal').style.display = 'none';
+    }
+
+    function confirmPremiumPurchase() {
+        closePremiumModal();
+        // Simulate a successful transaction
+        alert("Thank you for upgrading to the Premium Plan!");
+        // Here, you would typically handle the transaction logic, such as communicating with a payment gateway
+    }
+
+    function redirectToFreePlan() {
+        // Redirect to another page for the Free Plan
+        window.location.href = "Default.cshtml"; // Replace "free-plan.html" with the actual URL
+    }
+
+
+
+</script>
+
+</body>
+</html>
+
+
